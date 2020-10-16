@@ -1,4 +1,5 @@
-﻿using hathet.MnbServiceReference;
+﻿using hathet.Entities;
+using hathet.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,12 @@ namespace hathet
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates;
         public Form1()
         {
             InitializeComponent();
             WebSzolg();
+            dataGridView1.DataSource = Rates;
         }
         private void WebSzolg()
         {
