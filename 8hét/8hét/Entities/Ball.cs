@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _8hét.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,26 +9,11 @@ using System.Windows.Forms;
 
 namespace _8hét.Entities
 {
-    public class Ball : Label
+    public class Ball : Toy
     {
-        public Ball()
-        {
-            AutoSize = false;
-            Height = 50;
-            Width = Height;
-            Paint += Ball_Paint;
-        }
-        protected void DrawImage(Graphics g)
+        protected override void DrawImage(Graphics g)
         {
             g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
-        }
-        private void Ball_Paint(object sender, PaintEventArgs e)
-        {
-            DrawImage(e.Graphics);
-        }
-        public void MoveBall()
-        {
-            Left += 1;
         }
     }
 }
