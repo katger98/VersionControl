@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace _8hét.Entities
 {
-    public class BallFactory: IToyFactory
+    public class PresentFactory : IToyFactory
     {
-        public Color BallColor { get; set; }
+        public Color color1 { get; set; }
+        public Color color2 { get; set; }
         public Toy CreateNew()
         {
-            return new Ball(BallColor);
+            return new Present(color1, color2);
         }
     }
 }

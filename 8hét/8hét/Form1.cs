@@ -64,7 +64,9 @@ namespace _8hét
 
         private void Ball_Click(object sender, EventArgs e)
         {
-            Factory = new BallFactory();
+            Factory = new BallFactory()
+            {BallColor=button1.BackColor 
+            };
         }
         private void DisplayNext()
         {
@@ -86,6 +88,14 @@ namespace _8hét
             if (color.ShowDialog() != DialogResult.OK)
                 return;
             button.BackColor = color.Color;
+        }
+
+        private void Present_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory() {
+                color1 = button2.BackColor,
+                color2=button3.BackColor
+            };
         }
     }
 }
