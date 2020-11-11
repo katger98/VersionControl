@@ -20,8 +20,8 @@ namespace _8hét.Entities
         protected override void DrawImage(Graphics g)
         {
             g.FillRectangle(PresentMain, 0, 0, Width, Height);
-            g.FillRectangle(PresentSecond, 20, 0, 10, 50);
-            g.FillRectangle(PresentSecond, 0, 20, 50, 10);
+            g.FillRectangle(PresentSecond, 20, 0, Width/5, Height);
+            g.FillRectangle(PresentSecond, 0, 20, Width, Height/5);
         }
     }
 }
