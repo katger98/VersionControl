@@ -19,10 +19,7 @@ namespace whg
         int nbrOfSteps = 10;
         int nbrOfStepsIncrement = 10;
         int generation = 1;
-        var playerList = from p in gc.GetCurrentPlayers()
-                         orderby p.GetFitness() descending
-                         select p;
-        var topPerformers = playerList.Take(populationSize / 2).ToList();
+       
         public Form1()
         {
             InitializeComponent();
@@ -35,7 +32,7 @@ namespace whg
             {
                 gc.AddPlayer(nbrOfSteps);
             }
-            gc.Start(true);
+            gc.Start();
 
         }
 
@@ -43,6 +40,11 @@ namespace whg
         {
             generation++;
             label1.Text = generation.ToString() + ". generáció";
+
+            var playerList = from p in gc.GetCurrentPlayers()
+                             orderby p.GetFitness() descending
+                             select p;
+            var topPerformers = playerList.Take(populationSize / 2).ToList();
 
             gc.ResetCurrentLevel();
             foreach (var p in topPerformers)
